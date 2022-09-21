@@ -1,0 +1,114 @@
+:root {
+    --Moderateviolet: hsl(263, 55%, 52%);
+    --Verydarkgrayishblue: hsl(217, 19%, 35%);
+    --Verydarkblackishblue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+    --Lightgray: hsl(0, 0%, 81%);
+    --Lightgrayishblue: hsl(210, 46%, 95%);
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: var(--Lightgrayishblue);
+}
+main {
+    margin-top: 30px;
+    padding: 0 160px;
+    display: grid;
+    grid-template-columns: repeat(4, 280px);
+    grid-template-rows: repeat(2, 320px);
+    gap: 30px;
+}
+.box {
+    padding: 30px;
+    border-radius: 10px;
+}
+.box:nth-of-type(1) {
+    grid-area: 1/1/2/3;
+    background-image: url("../images/bg-pattern-quotation.svg"), linear-gradient(var(--Moderateviolet), var(--Moderateviolet));
+    background-repeat: no-repeat;
+    background-position: 80% 0;
+}
+.box:nth-of-type(2) {
+    grid-area: 1/3/2/4;
+    background-color: var(--Verydarkgrayishblue);
+}
+.box:nth-of-type(3) {
+    grid-area: 1/4/3/5;
+    background-color: var(--White);
+}
+.box:nth-of-type(4) {
+    grid-area: 2/1/3/2;
+    background-color: var(--White);
+}
+.box:nth-of-type(5) {
+    grid-area: 2/2/3/4;
+    background-color: var(--Verydarkblackishblue);
+}
+.box .definition {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.box .definition img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+.box .definition p {
+    padding-left: 15px;
+    color: var(--White);
+    font-size: 17px;
+}
+.box .definition p span {
+    display: block;
+    color: var(--Lightgray);
+    font-size: 14px;
+    padding-top: 3px;
+}
+.box:nth-of-type(3) .definition p {
+    color: black;
+}
+.box:nth-of-type(4) .definition p {
+    color: black;
+}
+.box .text p:nth-of-type(1) {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+.box:nth-of-type(3) .text p:nth-of-type(1) {
+    color: black;
+}
+.box:nth-of-type(4) .text p:nth-of-type(1) {
+    color: black;
+    font-size: 23px;
+}
+.box .text p:nth-of-type(2) {
+    color: var(--Lightgray);
+    font-size: 15px;
+}
+.box:nth-of-type(3) .text p:nth-of-type(2) {
+    font-size: 16.2px;
+}
+.box:nth-of-type(4) .text p:nth-of-type(2) {
+    font-size: 17px;
+}
+@media (max-width: 767px) {
+    main {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .box:nth-of-type(1) {
+        background-position: 90% 0;
+    }
+    .box .text p:nth-of-type(1) {
+        font-size: 21px;
+    }
+}
